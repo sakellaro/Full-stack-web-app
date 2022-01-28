@@ -1,0 +1,161 @@
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    // Bootstrap CSS
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css' integrity='sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p' crossorigin='anonymous')
+    link(href='/css/hotel.css' rel='stylesheet')
+    script(src='/js/bookRoom.js' defer)
+    title Astra Hotel - Booking
+    link(rel='icon' href='https://www.astrasuites.com/wp-content/themes/astra/images/favicon.ico')
+  body
+    #blur-background-book-room
+    #header.container-fluid
+      #header-top.row.pt-1.pb-1
+        .col.col-sm.d-flex.justify-content-center.align-items-center
+          i.fas.fa-envelope
+          | &nbsp;&nbsp;&nbsp;
+          span.text info@astrahotel.com
+        .col.col-sm.d-flex.justify-content-center.justify-content-sm-end.align-items-center
+          span.text Follow us :
+          | &nbsp;&nbsp;&nbsp;
+          a(href='https://www.facebook.com')
+            i.fab.fa-facebook
+          | &nbsp;&nbsp;
+          a(href='https://www.instagram.com')
+            i.fab.fa-instagram
+        .col-sm.d-flex.justify-content-center.align-items-center
+          a.text.registration(href='#') Login
+          | &nbsp;
+          span.text.registration /
+          | &nbsp;
+          a.text.registration(href='#') Register
+      #header-menu.row.pt-2
+        .col-2.d-flex.justify-content-center.align-items-start.pt-1
+          img(src='https://www.astrasuites.com/wp-content/themes/astra/images/favicon.ico' alt='Astra Hotel' width='50')
+        .col-6.p-md-0.d-flex.justify-content-center.align-items-center
+          nav.navbar.navbar-expand-md.d-flex.justify-content-center.align-items-center
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarNav.collapse.navbar-collapse
+              ul.navbar-nav.d-flex.flex-column.flex-md-row.justify-content-start.align-items-center
+                li.nav-item.me-md-2
+                  a.nav-link(href='/') HOME
+                li.nav-item.me-md-2
+                  a.nav-link(href='#') ACCOMMODATION
+                li.nav-item
+                  a.nav-link.active(href='#') RESERVATIONS
+        .book.col-4.d-flex.justify-content-center.align-items-start
+          button#book-button(type='button') BOOK NOW
+    br
+    #book-room-page.d-flex.flex-column
+      .title.w-75.text-center.align-self-center
+        | Get informed about the accommodation availability
+      hr
+      br
+      each room, i in rooms
+        .room-container.mb-5.container.w-75
+          .row
+            .col-lg-5.col-xl-4.d-flex.justify-content-center
+              img(src='/images/'+room.name+'/'+room.photos[0] alt=room.name width='80%')
+            .col-md.ps-2.d-flex.flex-column.justify-content-evenly.ms-md-5.ms-lg-0
+              .room-title.align-self-center.align-self-md-auto.mt-3.mt-lg-0 #{room.name}
+              .room-features.align-self-center.align-self-md-auto
+                i.far.fa-user
+                | &nbsp;&nbsp;&nbsp;
+                b max guests: 
+                | #{room.max_guests} adults
+              .room-features.align-self-center.align-self-md-auto
+                i.fas.fa-bed
+                | &nbsp;&nbsp;
+                b bed type: 
+                | #{room.bed_type}
+              .room-features.align-self-center.align-self-md-auto
+                i.fas.fa-square
+                | &nbsp;&nbsp;&nbsp;
+                b room size: 
+                | #{room.size}
+              .room-features.align-self-center.align-self-md-auto
+                i.fas.fa-hotel
+                if (room.deluxe) 
+                  | &nbsp;&nbsp;&nbsp;deluxe
+                else 
+                  | &nbsp;&nbsp;&nbsp;non-deluxe
+            .date.col-xl-4.col-lg-3.col-md.text-lg-center.d-flex.flex-column.justify-content-center.mx-auto.mt-3.mt-lg-0
+              if roomsAreReserved[room.name].length
+                span.reserved RESERVED
+                each book, j in roomsAreReserved[room.name]
+                  .span from #{book.arrivalDate} to #{book.departureDate}
+              else 
+                span.available AVAILABLE
+                | for all dates
+          .row.flex-row.flex-md-row-reverse.flex-column-reverse.flex-md-column.mt-3
+            .col-11.col-md-3.col-xl-2.d-flex.justify-content-end.justify-content-md-start.mt-2.mt-md-0
+              button.buttons.details-btn(type='button') View Details
+            .col-11.col-md-3.col-xl-2.d-flex.justify-content-end.mt-2.mt-md-0
+              button.buttons.book-btn(type='button') Proceed
+        .pop-up
+          .pop-up-room-title.d-flex.justify-content-start.align-items-center
+            | #{room.name}
+          .pop-up-body
+            .carousel.slide.carousel-fade(data-bs-ride='carousel' id=`carouselControls${i}`)
+              .carousel-indicators
+                button.active(type='button' data-bs-target=`#carouselControls${i}` data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+                button(type='button' data-bs-target=`#carouselControls${i}` data-bs-slide-to='1' aria-label='Slide 2')
+                button(type='button' data-bs-target=`#carouselControls${i}` data-bs-slide-to='2' aria-label='Slide 3')
+              .carousel-inner
+                .carousel-item.active.carousel-room-images
+                  img.w-100.d-block(src='/images/'+room.name+'/'+room.photos[0] alt=room.name)
+                .carousel-item.carousel-room-images
+                  img.w-100.d-block(src='/images/'+room.name+'/'+room.photos[1] alt=room.name)
+                .carousel-item.carousel-room-images
+                  img.w-100.d-block(src='/images/'+room.name+'/'+room.photos[2] alt=room.name)
+              button.carousel-control-prev(type='button' data-bs-target=`#carouselControls${i}` data-bs-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.visually-hidden Previous
+              button.carousel-control-next(type='button' data-bs-target=`#carouselControls${i}` data-bs-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.visually-hidden Next
+            .room-description.mb-3
+              | #{room.description}
+            .room-services.container
+              .row
+                each serviceAndIcon, j in room.services
+                  .col-3.col-lg-2.d-flex.flex-column.align-items-center.mb-3
+                    i.room-service-icons.mb-2(class=serviceAndIcon["icon"])
+                    span.room-service-names.text-center
+                      | #{serviceAndIcon["service"]}
+          .close-button.d-flex.justify-content-end.align-items-center.pe-4
+            button.close-btn(type='button') CLOSE
+    .container
+      .row
+        .col-10.mx-auto
+          hr
+      .row.mt-2.mb-4
+        .col-4.d-flex.justify-content-end.align-self-center.me-2
+          img(src='https://www.astrasuites.com/wp-content/themes/astra/images/favicon.ico' alt='Astra Hotel' width='70')
+        .col-6.addresstextGrey
+          b  Agiou Andreou 781 00 Santorini, Greece
+          | T.
+          a(href='tel:+302107101100') (+30) 2610-811.450
+          br
+          | e-mail:
+          a(href='mailto:astrahotel@mail.com') astrahotel@mail.com
+          br
+          br
+          | Notification of Registration Number: 1212178 (ver. 0)
+          br
+          br
+          | L.S ΣΑΝΤΟΡΙΝΗ ΑΣΤΡΑ ΞΕΝΟΔΟΧΕΙΑΚΗ Α.Ε.
+          br
+          | ΛΕΩΦ. ΑΛΕΞΑΝΔΡΑΣ 62
+          br
+          | 174 55 ΑΛΙΜΟΣ
+          br
+          | Α.Φ.Μ. 099528759 – Δ.Ο.Υ. ΦΑΕ ΠΕΙΡΑΙΑ  
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj' crossorigin='anonymous')
+
+

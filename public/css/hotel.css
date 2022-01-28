@@ -1,0 +1,599 @@
+* {
+    margin:0;
+    padding:0;
+    list-style: none;
+    font-family: Comfortaa;
+}
+
+/****************************************** HEADER **************************************************/
+
+#header > #header-top{
+    background-color: #505050;
+}
+
+#header > #header-top .text{
+    font-size: 0.9em;
+    color: #f5f5f5;
+}
+
+#header > #header-top i{
+    color:#f5f5f5;
+    transition-property: color;
+    transition-duration: 0.2s;
+}
+
+#header > #header-top i:hover{
+    color:#e4a14b;
+}
+
+#header > #header-top .registration{
+    color: #e4a14b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#header > #header-menu .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(80,80,80)' stroke-width='3.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#header > #header-menu .navbar-toggler:hover > .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(150, 150, 150)' stroke-width='3.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#header > #header-menu .nav-item > .nav-link{
+    color: #505050 ;
+}
+
+#header > #header-menu .nav-item > .nav-link:hover{
+    color: #a68b58 ;
+}
+
+#header > #header-menu .nav-item > .active{
+    color: #a68b58 ;
+}
+
+#header > #header-menu #book-button{
+    border: none;
+    border-radius: 5px;
+    padding: 7px 15px 5px 15px;
+    background-color: #a68b58;
+    color: #f5f5f5;
+    transition-property: transform;
+    transition-duration: 0.4s;
+}
+
+#header > #header-menu #book-button:hover, #header > #header-menu #book-button:active{
+    transform:scale(0.95);
+}
+
+#header > #header-menu .book{
+    padding-top: 10px;
+}
+
+#header > #header-menu{
+    padding-bottom: 8px;
+    background-color: white;
+}
+
+#header-menu .book-button-active{
+    border: solid #887044 2px;
+    border-radius: 5px;
+    padding: 7px 15px 5px 15px;
+    background-color: #a68b58;
+    color: #f5f5f5;
+    transform: scale(0.95);
+}
+
+
+/****************************************** BOOKING **************************************************/
+
+#book-page .title{
+    font-size: larger;
+    font-weight: bolder;
+    color: #2c2c2c;
+}
+
+#book-page>.container{
+    box-shadow: 0px 5px 10px 5px rgb(187, 187, 187);
+    border-radius: 5px;
+    padding: 20px 15px 25px 15px;
+}
+
+#book-page>.room-container{
+    margin-bottom: 30px;
+}
+
+#book-page>.search-container{
+    width:80%
+}
+
+#book-page .room-title{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#book-page .room-features{
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+#book-page .fa-square{
+    margin-right: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    #book-page .room-title, #book-page .room-features{
+        width: 75%;
+    }
+  }
+
+
+  @media screen and (max-width: 576px) {
+    #book-page .buttons, #book-page .price{
+        width: 45%;
+    }
+  }
+
+  @media screen and (min-width:576px) and (max-width: 768px) {
+    #book-page .buttons, #book-page .price{
+        width: 34%;
+    }
+  }
+
+  @media screen and (min-width:768px) and (max-width: 992px) {
+    #book-page .buttons{
+        width: 100%;
+    }
+  }
+
+  @media screen and (min-width:992px) and (max-width: 1200px) {
+    #book-page .buttons{
+        width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+      .date{
+        width: 75%;
+    }
+  }
+
+  @media screen and (min-width:1200px) and (max-width: 1300px) {
+    #book-page .buttons{
+        width: 100%;
+    }
+  }
+
+  @media screen and (min-width:1300px){
+    #book-page .buttons{
+        width: 90%;
+    }
+  }
+
+#book-page .price{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #a68b58;
+}
+
+#book-page .buttons{
+    border: none;
+    border-radius: 5px;
+    padding: 7px 15px 7px 15px;
+    background-color: #505050;
+    font-size: 0.9em;
+    color:rgb(255, 255, 255);
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+#book-page .buttons:hover, #book-page .buttons:active{
+    transform:scale(0.95);
+}
+
+#book-page .pop-up .pop-up-body > .room-description{
+    text-align: justify;
+    padding-top: 4px;
+}
+
+@media screen and (min-width:768px){
+    #book-page .pop-up .pop-up-body > .room-description{
+        font-size: 0.85em;
+    }  
+}
+
+@media screen and (max-width:768px){
+    #book-page .pop-up .pop-up-body > .room-description{
+        font-size: 0.8em;
+    }  
+}
+
+#book-page .pop-up{
+    display: none;
+    opacity: 0;
+    z-index: 2;
+    transition-property:opacity;
+    transition-duration: 0.6s;
+}
+
+#blur-background{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.6s;
+}
+
+#blur-background-book-room{
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.6s;
+}
+
+#book-page .pop-up > *{
+    position: fixed;
+}
+
+#book-page .pop-up > .pop-up-room-title{
+    font-size: 1.2em;
+    top: 10%;
+    left: 50%;
+    height: 6.5%;
+    width: 50%;
+    transform: translate(-50%);
+    background-color: #ffffff;
+    padding-left: 10px;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: solid 1px rgb(220, 220, 220);
+}
+
+#book-page .pop-up > .pop-up-body{
+    top: 16.5%;
+    left: 50%;
+    width: 50%;
+    height: 65%;
+    overflow-y: scroll;
+    transform: translate(-50%);
+    background-color:rgb(255, 255, 255);
+    padding: 10px 10px 20px;
+}
+
+#book-page .pop-up > .pop-up-body > .room-services .room-service-names{
+    font-size: 10px;
+    line-height: 13px;
+    color: #505050;
+}
+
+#book-page .pop-up > .pop-up-body > .room-services .room-service-icons{
+    font-weight: 400;
+}
+
+#book-page .pop-up > .close-button{
+    top: 81.5%;
+    left: 50%;
+    height: 8%;
+    width: 50%;
+    transform: translate(-50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px -2px 5px 0px rgb(200, 200, 200);
+}
+
+@media screen and (min-width:992px){
+    #book-page .pop-up > .pop-up-room-title {
+        width: 50%;
+    }
+
+    #book-page .pop-up > .pop-up-body{
+        width: 50%;
+    }
+
+    #book-page .pop-up > .close-button{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:992px){
+    #book-page .pop-up > .pop-up-room-title {
+        width: 60%;
+    }
+
+    #book-page .pop-up > .pop-up-body{
+        width: 60%;
+    }
+
+    #book-page .pop-up > .close-button{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px){
+    #book-page .pop-up > .pop-up-room-title {
+        width: 70%;
+    }
+
+    #book-page .pop-up > .pop-up-body{
+        width: 70%;
+    }
+
+    #book-page .pop-up > .close-button{
+        width: 70%;
+    }
+}
+
+#book-page .pop-up > .close-button > button{
+    border: none;
+    border-radius: 5px;
+    padding: 7px 25px 7px 25px;
+    background-color: #505050;
+    font-size: 0.8em;
+    color:rgb(255, 255, 255);
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+#book-page .pop-up > .close-button > button:hover{
+    background-color: #000000;
+}
+
+#clear{
+    font-size:0.8em;
+    margin-top: 3px;
+    padding-bottom: 2px;
+    color:rgb(99, 99, 99);
+}
+
+.date{
+    font-weight: 800;
+    color: rgb(92, 92, 92);
+}
+
+.a{
+    border: solid 1px black;
+}
+
+
+/****************************************** REGISTRATION AND LOGIN **************************************************/
+
+#registration-page, #login-page{
+    position:relative;
+}
+
+#registration-page > #background-image, #login-page > #background-image{
+    position: absolute;
+    background-image: url("/images/francesca-saraco-_dS27XGgRyQ-unsplash.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 560px;
+    width: 100%;
+    z-index: -2;
+}
+
+#login-page > #background-image{
+    height: 500px;
+}
+
+#registration-page > .blur-background-new, #login-page > .blur-background-new{
+    position:absolute;
+    background-color: rgb(0, 0, 0);
+    opacity:0.2;
+    height: 560px;
+    width: 100%;
+    z-index: -1;
+}
+
+#login-page > .blur-background-new{
+    height:500px;
+}
+
+#registration-page > .container #registration-text {
+    color: rgb(255, 255, 255);
+}
+
+#registration-page > .container #registration-text >  #registration-text-1{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#registration-page > .container #registration-text >  #registration-text-2{
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+#registration-page #registration-form > fieldset, #login-page #login-form > fieldset{
+    background-color: white;
+    box-shadow: 0px 5px 10px 5px rgb(37, 37, 37);
+    border-radius: 5px;
+    padding: 20px 15px 25px 15px;
+}
+
+@media screen and (max-width:992px){
+    #registration-page > .container #registration-text >  #registration-text-1{
+        font-size: 1.7em;
+    }
+
+    #registration-page > .container #registration-text >  #registration-text-2{
+        font-size: 1.1em;
+    }
+    #registration-page #registration-form .form-text{
+        font-size: 0.7em;
+    }
+    #registration-page #registration-form input{
+        font-size: 0.9em;
+    }
+    #registration-page > #background-image, #registration-page > .blur-background-new{
+        height: 650px;
+    }
+}
+
+@media screen and (max-width:576px){
+    #registration-page > #background-image, #registration-page > .blur-background-new{
+        height: 700px;
+    }
+}
+
+.is-danger{
+    color:red;
+}
+
+#success-message{
+    background-color: rgba(134, 255, 185, 0.5);
+    color:rgb(0, 71, 9);
+    border-radius: 3px;
+    font-weight: 500;
+    transition-duration: 0.6s;
+}
+
+.opacity-zero{
+    opacity: 0;
+}
+
+#login-footer{
+    margin-top: 150px;
+}
+
+
+/********************************** HOME PAGE **********************************************************/
+
+#home-page{
+    position: relative;
+}
+
+#home-page > #carouselExampleControls{
+    z-index: -2;
+}
+
+#title-home-page{
+    position: absolute;
+    left:50%;
+    top:30%;
+    transform: translate(-50%,-50%);
+    font-weight: 500;
+    color: whitesmoke;
+    text-align: center;
+}
+
+#subtitle-home-page{
+    position: absolute;
+    left:50%;
+    top:40%;
+    transform: translate(-50%,-50%);
+    font-weight: 300;
+    color: rgb(211, 197, 150);
+    text-align: center;
+}
+
+@media screen and (min-width:992px){
+
+    #title-home-page{
+        font-size: 2.7em;
+    }
+    
+    #subtitle-home-page{
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+    
+
+}
+
+@media screen and (min-width:768px) and (max-width:992px){
+    #title-home-page{
+        font-size: 2em;
+    }
+    #subtitle-home-page{
+        font-size: 1.2em;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width:576px) and (max-width:768px){
+    #title-home-page{
+        font-size: 1.5em;
+    }
+    #subtitle-home-page{
+        font-size: 0.9em;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:576px){
+    #title-home-page{
+        font-size: 1.3em;
+    }
+    #subtitle-home-page{
+        font-size: 0.8em;
+        margin-top: 30px;
+    }
+}
+
+
+.blur-background-home{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: -1;
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+.header-title-home-page{
+    font-size: 2em;
+    font-weight: 400;
+    color:rgb(31, 31, 31);
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+.text-title-home-page{
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+.fixed-image{
+  background-image: url("/images/sara-dubler-Koei_7yYtIo-unsplash.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 2em;
+}
+
+.background-color-fixed-image{
+    position: absolute;
+    background-color: rgba(255, 166, 139, 0.199);
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.addresstextGrey {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: normal;
+    font-style: normal;
+    color: #666;
+    display: block;
+    float: left;
+    padding: 20px 0px;
+}
+
+.reserved{
+    color:brown;
+    text-decoration: line-through;
+}
+
+.available{
+    color: rgb(112, 184, 40);
+}

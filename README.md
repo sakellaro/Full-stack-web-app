@@ -15,4 +15,4 @@ db.rooms.insert({name:"King Room 019453", photos:["pexels-pixabay-262048.jpg","w
 
 
 HOW TO BEGIN THE PROECT:
-From cmd, you go to "Astra Hotel" folder and you initialize the local server with command "npm start" or "nodemon".
+From cmd, you are going to project folder and you initialize the local server with command "npm start" or "nodemon".

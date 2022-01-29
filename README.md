@@ -1,3 +1,6 @@
+In order to run this project, you should have installed nodejs, mongodb, express and pug template.
+
+
 DATABASE INITIALIZATION:
 use astra-hotel
 
@@ -12,4 +15,4 @@ db.rooms.insert({name:"King Room 019453", photos:["pexels-pixabay-262048.jpg","w
 
 
 HOW TO BEGIN THE PROECT:
-From cmd, you enter to "Astra Hotel" folder and you initialize local server with the command "npm start" or "nodemon".
+From cmd, you go to "Astra Hotel" folder and you initialize the local server with command "npm start" or "nodemon".
